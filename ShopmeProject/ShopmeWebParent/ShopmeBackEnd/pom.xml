@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<!--In the backend and frontend modules, the parent is the web parent module -->
+		<groupId>com.shopme</groupId>
+		<artifactId>ShopmeWebParent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>ShopmeBackEnd</artifactId>
+	<name>ShopmeBackEnd</name>
+	<description>Shopme backend module (Admin)</description>
+	<properties>
+		<java.version>11</java.version>
+	</properties>
+	<dependencies>
+		<!-- No need to declare any dependencies since will inherit from the parent module-->
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+		<!--
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>application.properties</include>
+					<include>index.html</include>
+				</includes>
+
+			</resource>
+		</resources>
+		-->
+	</build>
+
+</project>
