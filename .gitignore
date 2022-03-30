@@ -1,0 +1,9 @@
+/ShopmeProject/ShopmeWebParent/ShopmeBackEnd/ShopmeBackEnd/.gitignore
+/ShopmeProject/ShopmeWebParent/ShopmeBackEnd/ShopmeBackEnd/.mvn/wrapper/maven-wrapper.jar
+/ShopmeProject/ShopmeWebParent/ShopmeBackEnd/ShopmeBackEnd/.mvn/wrapper/maven-wrapper.properties
+/ShopmeProject/ShopmeWebParent/ShopmeBackEnd/ShopmeBackEnd/mvnw
+/ShopmeProject/ShopmeWebParent/ShopmeBackEnd/ShopmeBackEnd/mvnw.cmd
+/ShopmeProject/ShopmeWebParent/ShopmeBackEnd/ShopmeBackEnd/pom.xml
+/ShopmeProject/ShopmeWebParent/ShopmeBackEnd/ShopmeBackEnd/src/main/java/ShopmeBackEnd/ShopmeBackEndApplication.java
+/ShopmeProject/ShopmeWebParent/ShopmeBackEnd/ShopmeBackEnd/src/main/resources/application.properties
+/ShopmeProject/ShopmeWebParent/ShopmeBackEnd/ShopmeBackEnd/src/test/java/ShopmeBackEnd/ShopmeBackEndApplicationTests.java
