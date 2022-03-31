@@ -14,6 +14,6 @@ public class UserRepositoryTests {
     @Autowired
     private UserRepository repo;
 
-    @Test
+    @Test //empty test
     public void testCreateUser(){}
 }
