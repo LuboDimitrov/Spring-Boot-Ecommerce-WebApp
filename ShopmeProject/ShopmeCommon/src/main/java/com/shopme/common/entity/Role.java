@@ -2,6 +2,7 @@ package com.shopme.common.entity;
 
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name = "roles") //table in the DB
@@ -19,6 +20,10 @@ public class Role {
 
     //empty constructor required by hibernate
     public Role() {}
+
+    public Role(Integer id) {
+        this.id = id;
+    }
 
     public Role(String name) {
         this.name = name;
@@ -51,5 +56,25 @@ public class Role {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Role role = (Role) o;
+        return id.equals(role.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return "Role{" +
+                "name='" + name + '\'' +
+                '}';
     }
 }
