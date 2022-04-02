@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--
+In the attribute xmlns:pfx, xmlns is like a reserved word, which is used only to declare a namespace.
+In other words, xmlns is used for binding namespaces, and is not itself bound to any namespace.
+Therefore, the above example is read as binding the prefix "pfx" with the namespace "http://www.foo.com."
+-->
+<html xmlns:th="http://www.thymeleaf.org"> <!--The xmlns attribute specifies the xml namespace for a document. th stands for thymeleaf-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--meta tag needed for displaying the page on mobile--->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Home - Admin Page</title>
+
+    <!--we need to use thymeleaf(th:) for every URL in the application-->
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <!--Script tag to refer to jQuery library and bootstrap-->
+    <script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
+</head>
+<body>
+    <div class="container-fluid"><!--CSS class for responsive webpagesges-->
+        <div>
+            <!--expand-lg to make responsive. but that aint enough, we also need a toggler button-->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" th:href="@{/}"><!--Click on the logo to return to homepage-->
+                    <img th:src="@{/images/ShopmeAdminSmall.png}"/>
+                </a>
+                <!--button toggler                                             we make up the data target but then we have to put the same in the id div of the items-->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+                    <span class="navbar-toggler-icon"></span><!--span for the toggler icon-->
+                </button>
+                <!--nav bar items-->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/users}" target="_blank">Users</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/categories}" target="_blank">Categories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/brands}" target="_blank">Brands</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/products}" target="_blank">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/customers}" target="_blank">Customers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/shipping}" target="_blank">Shipping</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/orders}" target="_blank">Orders</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/report}" target="_blank">Sales Reports</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/articles}" target="_blank">Articles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/menus}" target="_blank">Menus</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/settings}" target="_blank">Settings</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div>
+            <h2>Manage Users</h2>
+        </div>
+        <div>
+            <table class="table table-bordered table-striped table-hover table-responsive-xl">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>User ID</th>
+                        <th>Photos</th>
+                        <th>Email</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Roles</th>
+                        <th>Enabled</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="user : ${listUsers}">
+                        <td>[[${user.id}]]</td>
+                        <td></td>
+                        <td>[[${user.email}]]</td>
+                        <td>[[${user.firstName}]]</td>
+                        <td>[[${user.lastName}]]</td>
+                        <td>[[${user.roles}]]</td>
+                        <td>[[${user.enabled}]]</td>
+                        <td>
+                            Edit &nbsp; Delete
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+<footer>
+    <div class="text-center">
+        <p>Shopme Control Panel - All rights reserved &copy; Shopme</p>
+    </div>
+</footer>
+</body>
+</html>
